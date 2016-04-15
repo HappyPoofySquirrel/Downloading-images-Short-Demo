@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        mavenCentral()
+  //     maven { url 'http://download.crashlytics.com/maven' }
+
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.0.0'
+    //    classpath 'com.crashlytics.tools.gradle:crashlytics-gradle:1.+'
+
+    }
+}
+
+apply plugin: 'com.android.application'
+//apply plugin: 'crashlytics'
+
+
+
+repositories {
+    mavenCentral()
+ //   maven { url 'http://download.crashlytics.com/maven' }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+  //  compile 'com.crashlytics.android:crashlytics:1.+'
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.example.ghopkins.downloadingimages"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
